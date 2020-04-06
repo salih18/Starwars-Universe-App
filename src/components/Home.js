@@ -3,43 +3,42 @@ import { connect } from "react-redux";
 
 import HeroImage from "./elements/HeroImage";
 import SearchBar from "./elements/SearchBar";
-import Grid from "./elements/Grid";
+import PeopleGrid from "./elements/PeopleGrid";
 import MovieThumb from "./elements/MovieThumb";
-import LoadMoreBtn from "./elements/LoadMoreBtn";
 import Spinner from "./elements/Spinner";
+import Pagination from "./elements/Pagination";
 
-import { fetchPeople } from "../actions/people";
+import { fetchCharacters } from "../actions/characters";
+
 
 import PropTypes from "prop-types";
 
-const Home = ({ fetchPeople, people }) => {
+const Home = ({ fetchCharacters }) => {
   useEffect(() => {
-    fetchPeople();
-  }, [fetchPeople]);
+    fetchCharacters();
+  }, [fetchCharacters]);
 
-  useEffect(() => {
-    sessionStorage.setItem("peopleState", JSON.stringify(people.characters));
-  }, [people]);
+  // useEffect(() => {
+  //   movies.films.forEach((movie) => {
+  //     sessionStorage.setItem(movie.url, JSON.stringify(movie));
+  //   });
+  // }, [movies]);
 
   return (
     <>
       <HeroImage />
       <SearchBar />
-      <Grid people={people} />
+      <PeopleGrid />
+
       <MovieThumb />
       <Spinner />
-      <LoadMoreBtn />
+      <Pagination />
     </>
   );
 };
 
 Home.propTypes = {
-  fetchPeople: PropTypes.func.isRequired,
-  people: PropTypes.object.isRequired,
+  fetchCharacters: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  people: state.people,
-});
-
-export default connect(mapStateToProps, { fetchPeople })(Home);
+export default connect(null, { fetchCharacters: fetchCharacters })(Home);
