@@ -17,8 +17,6 @@ export const selectCharacter = (id) => async (dispatch) => {
 
 export const fetchCharacterProfile = (id) => async (dispatch) => {
   try {
-    console.log({ id });
-
     const res = await axios.get(`${API_URL}/people/${id}`);
 
     dispatch({

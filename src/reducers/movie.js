@@ -1,4 +1,4 @@
-import { FETCH_ALL_MOVIES } from "../actions/types";
+import { FETCH_MOVIE } from "../actions/types";
 
 const initialState = {
   films: [],
@@ -8,9 +8,9 @@ const initialState = {
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case FETCH_ALL_MOVIES:
+    case FETCH_MOVIE:
       return {
-        films: [...state.films, payload],
+        selected: payload,
         loading: false,
       };
     default:
