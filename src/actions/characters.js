@@ -1,9 +1,10 @@
 import axios from "axios";
 import { FETCH_CHARACTERS } from "./types";
 import { API_URL } from "../config";
-import { setSearchTerm } from "./search";
 
-export const fetchCharacters = (page, searchPage, searchTerm) => async (dispatch) => {
+export const fetchCharacters = (page, searchPage, searchTerm) => async (
+  dispatch
+) => {
   let res = {};
 
   try {

@@ -20,7 +20,7 @@ const MovieDetails = ({ movie: { selected, loading }, match, fetchMovie }) => {
   return loading ? (
     <PlaceHolder />
   ) : (
-    <Container>
+    <Container className ='movie-details'>
       <Segment>
         <Item.Group divided>
           <Item>

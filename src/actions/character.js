@@ -1,7 +1,9 @@
 import axios from "axios";
-import { SELECT_CHARACTER } from "./types";
-import { FETCH_CHARACTER_PROFILE } from "./types";
-import { FETCH_CHARACTER_MOVIES } from "./types";
+import {
+  SELECT_CHARACTER,
+  FETCH_CHARACTER_PROFILE,
+  FETCH_CHARACTER_MOVIES,
+} from "./types";
 import { API_URL } from "../config";
 
 export const selectCharacter = (id) => async (dispatch) => {

@@ -2,9 +2,9 @@ import { FETCH_CHARACTERS } from "../actions/types";
 
 const initialState = {
   characters: [],
-  nextPage:null,
+  nextPage:'',
   loading: true,
-  totalPages:null
+  totalPages:''
 };
 
 export default function (state = initialState, action) {

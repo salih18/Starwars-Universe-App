@@ -12,7 +12,7 @@ const PeopleGrid = ({
   characters: { characters, loading, movies },
   fetchCharacters,
   pagination: { aPage, aSearchPage },
-  search:{searchTerm, isSearchActive}
+  search: { searchTerm, isSearchActive },
 }) => {
   useEffect(() => {
     fetchCharacters(aPage, aSearchPage, searchTerm);
@@ -50,7 +50,7 @@ PeopleGrid.propTypes = {
 const mapStateToProps = (state) => ({
   characters: state.characters,
   pagination: state.pagination,
-  search: state.search
+  search: state.search,
 });
 
 export default connect(mapStateToProps, { fetchCharacters })(PeopleGrid);

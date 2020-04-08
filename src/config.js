@@ -1,3 +1,3 @@
-const API_URL = 'https://cors-anywhere.herokuapp.com/https://swapi.co/api'
+const API_URL = 'https://swapi.co/api'
 
 export {API_URL}

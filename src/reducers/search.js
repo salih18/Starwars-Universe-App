@@ -1,4 +1,4 @@
-import { SET_SEARCH_TERM } from "../actions/types";
+import { SET_SEARCH_TERM, SET_SEARCH_STATUS } from "../actions/types";
 
 const initialState = {
   searchTerm: "",
@@ -13,7 +13,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         searchTerm: payload,
-        isSearchActive: Boolean(payload),
+      };
+    case SET_SEARCH_STATUS:
+      return {
+        ...state,
+        isSearchActive: payload,
       };
     default:
       return state;
